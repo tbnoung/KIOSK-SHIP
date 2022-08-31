@@ -1,0 +1,61 @@
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.fix-content-modal {
+  max-height: calc(100vh - 300px) ;
+  padding: 24px 0 24px 24px ;
+  overflow-y: scroll ;
+  overflow-x: hidden;
+}
+.overflow-modal {
+  .ant-modal-body {
+  padding: 0 !important;
+}
+}
+
+.ant-spin-nested-loading > div > .ant-spin {
+  max-height: 100vh !important;
+}
+
+.text-red {
+  color: red !important
+}
+.text-white {
+  color: whitesmoke !important
+}
+table {
+  thead tr th {
+    background-color: #4682B4 !important;
+    border: 1px solid #4682B4 !important;
+    color: #fff !important;
+  }
+}
+
+// Button
+.btn-green {
+  background-color: rgb(16, 170, 110) !important;
+  color: white !important;
+}
+.btn-yellow {
+  background-color: #faad15 !important;
+  color: white !important;
+}
+
+// TEXT
+.text-bold {
+  font-weight: bold !important;
+}
+
+// Table 
+.ant-table-pagination.ant-pagination {
+  text-align: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  float: none !important;
+}

@@ -1,0 +1,38 @@
+.@{menu-prefix-cls} {
+  &-item-group-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  &-submenu {
+    &-open {
+      background-color: @kit-gray-2;
+    }
+  }
+
+  &-inline-collapsed {
+    .@{menu-prefix-cls}-item-group {
+      position: relative;
+
+      &:first-child {
+        display: none;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        background: @kit-gray-2;
+      }
+    }
+
+    .@{menu-prefix-cls}-item-group-title {
+      visibility: hidden;
+    }
+  }
+}
