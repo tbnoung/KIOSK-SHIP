@@ -44,12 +44,12 @@
         </a-menu-item>
       </a-menu>
     </a-dropdown>
-    <template v-else>
+    <!-- <template v-else>
       <span id="headerSignIn">{{ $t('topBar.dontHaveAccount') }}</span>
       <nuxt-link id="headerFontSize" to="/register">{{
         $t('topBar.register')
       }}</nuxt-link>
-    </template>
+    </template> -->
     <validation-observer
       ref="inputForm"
       v-slot="{ handleSubmit }"

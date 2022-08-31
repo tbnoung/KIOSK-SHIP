@@ -62,11 +62,10 @@
 </template>
 
 <script>
-import { setTimeout } from 'timers'
 import rulesValidateForm from '@/mixins/ship/rules'
 import preRegister from '@/mixins/ship/preRegister'
 import { preRegisterCreateFormatter } from '@/helpers/ship/preregister/create'
-
+import lodash from 'lodash'
 export default {
   mixins: [rulesValidateForm, preRegister],
   beforeRouteLeave(_, __, next) {
@@ -105,7 +104,7 @@ export default {
   head() {
     return {
       htmlAttrs: {
-        lang: this.$i18n.locale,
+        lang: this.$i18n?.locale,
       },
     }
   },
@@ -145,12 +144,12 @@ export default {
         })
         this.$store.commit(
           'preRegister/SET_DEFAULT_PRE_REGISTER',
-          _.cloneDeep(this.form)
+          lodash.cloneDeep(this.form)
         )
         this.activePrivacyNoticeModal = true
       }
       await this.$store.dispatch('personalType/getPersonalType')
-      this.$store.dispatch('preRegister/mapUser', _.cloneDeep(this.form))
+      this.$store.dispatch('preRegister/mapUser', lodash.cloneDeep(this.form))
       this.isReady = true
       this.$store.commit('global/SET_CLOSE_LOADER')
     }, 100)
@@ -164,10 +163,10 @@ export default {
       }
     },
     setForm(result) {
-      this.form = preRegisterCreateFormatter(_.cloneDeep(result))
+      this.form = preRegisterCreateFormatter(lodash.cloneDeep(result))
       this.$store.commit(
         'preRegister/SET_DEFAULT_PRE_REGISTER',
-        _.cloneDeep(this.form)
+        lodash.cloneDeep(this.form)
       )
     },
     onSubmit() {
@@ -247,7 +246,7 @@ export default {
         pageSize: 5,
       }
     },
-    checkCitizenId: _.debounce(async function () {
+    checkCitizenId: lodash.debounce(async function () {
       try {
         const checkValidationForm = document.querySelector('.ant-form-explain')
         if (this.validateCitizen() && !checkValidationForm) {

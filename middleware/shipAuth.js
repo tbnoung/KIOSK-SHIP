@@ -5,7 +5,7 @@ export default async function ({ app, store }) {
 }
 
 const checkToken = (app) => {
-  const getToken = app.$auth.strategy.token.get()
+  const getToken = app.$auth.strategy?.token?.get()
   if (!getToken) {
     app.$auth.logout()
   } else return true

@@ -22,7 +22,7 @@
         ระบบลงทะเบียนขอเข้าพื้นที่ออนไลน์
       </div>
     </div>
-    <!-- <LayoutTopbar class="flex items-center" /> -->
+    <LayoutTopbar class="flex items-center" />
   </a-layout-header>
 </template>
 
