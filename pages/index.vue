@@ -125,6 +125,9 @@ export default {
     },
   },
   created() {
+    this.$router.replace({
+      query: { nonAccount: 'true' },
+    })
     this.$store.commit('global/SET_OPEN_LOADER')
     setTimeout(async () => {
       const perRegisterId = this.$route.query?.id || null
